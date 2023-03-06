@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <form method="post" action="/">
+        <input type="text" name="num1" value="<%= num1 || '' %>">
+        <select name="operation">
+            <option value="+" <%=operation==='+' ? 'selected' : '' %>>+</option>
+            <option value="-" <%=operation==='-' ? 'selected' : '' %>>-</option>
+            <option value="*" <%=operation==='*' ? 'selected' : '' %>>*</option>
+            <option value="/" <%=operation==='/' ? 'selected' : '' %>>/</option>
+        </select>
+        <input type="text" name="num2" value="<%= num2 || '' %>">
+        <button type="submit">Calculate</button>
+    </form>
+    <!-- <form method="post" action="/">
+        <input type="text" name="num1">
+        <select name="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" name="num2">
+        <button type="submit">Calculate</button>
+    </form> -->
+    <% if (typeof result !=='undefined' ) { %>
+        <h2>Result: <%= result %>
+        </h2>
+        <% } else { %>
+            <h2>Press 'Calculate' to run simulation</h2>
+            <% } %>
+</body>
+
+</html>
